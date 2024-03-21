@@ -14,12 +14,12 @@ spec:
   initContainers:
   - name: create-output-dir
     image: busybox
-    command: ["/bin/sh", "-c", "mkdir -p /home/nuclab/Downloads/pt_linux_x64/PerformanceTest/passmark-result"]
+    command: ["/bin/sh", "-c", "mkdir -p /home/passmark-result"]
     volumeMounts:
     - name: output-volume
-      mountPath: /home/nuclab/Downloads/pt_linux_x64/PerformanceTest/passmark-result
+      mountPath: /home/passmark-result
   volumes:
   - name: output-volume
     hostPath:
-      path: /home/nuclab/Downloads/pt_linux_x64/PerformanceTest/passmark-result
+      path: /home/passmark-result
   restartPolicy: Never
